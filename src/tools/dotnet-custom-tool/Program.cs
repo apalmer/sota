@@ -9,7 +9,7 @@ namespace dotnet_custom_tool
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("dotnet-custom-tool executing...");
+            Console.WriteLine(">>> dotnet-custom-tool executing...");
         }
     }
 }

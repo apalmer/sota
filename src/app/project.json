@@ -4,9 +4,6 @@
     "debugType": "portable",
     "emitEntryPoint": true
   },
-  "dependencies": {
-    "dotnet-custom-tool": "1.0.0-*"
-  },
 
   "frameworks": {
     "netcoreapp1.0": {
