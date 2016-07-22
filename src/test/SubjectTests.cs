@@ -11,7 +11,7 @@ namespace app.test
         [Fact]
         public void ThingGetsObjectValFromNumber()
         {
-            Assert.Equal(42, new app.Subject().Get(42));
+            Assert.Equal(42, new app.Domain.Subject().Get(42));
         }
     }
 }
