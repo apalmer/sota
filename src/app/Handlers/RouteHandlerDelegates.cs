@@ -1,4 +1,5 @@
 ﻿using app.Configuration;
+using app.Domain;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Options;
@@ -20,6 +21,9 @@ namespace app.Handlers
                 case "detonate":
                     return Detonate(context);
                     break;
+                case "resolve":
+                    return Resolve(context);
+                    break;
                 case "":
                 default:
                     return context.Response.WriteAsync($"Track handler handling... {string.Join(", ", routeValues)}");
@@ -27,16 +31,32 @@ namespace app.Handlers
             }
         }
 
-        internal Task Create(HttpContext context)
+        public Task Create(HttpContext context)
         {
             var routeValues = context.GetRouteData().Values;
             return context.Response.WriteAsync($"Create handler handling... {string.Join(", ", routeValues)}");
         }
 
-        internal Task Detonate(HttpContext context)
+        public Task Detonate(HttpContext context)
         {
             var routeValues = context.GetRouteData().Values;
             return context.Response.WriteAsync($"Detonate handler handling... {string.Join(", ", routeValues)}");throw new NotImplementedException();
+        }
+
+        public Task Resolve(HttpContext context)
+        {
+            var routeValues = context.GetRouteData().Values;
+            IAggregateRoot root = context.RequestServices.GetService(typeof(IAggregateRoot)) as IAggregateRoot;
+
+            var session = context.Session;
+            if(session.GetString("something") == default(string)) 
+            {
+                session.SetString("something", "this is really something");
+            }
+
+            var results = root.GetResponse(routeValues);
+
+            return context.Response.WriteAsync(results);
         }
     }
 }

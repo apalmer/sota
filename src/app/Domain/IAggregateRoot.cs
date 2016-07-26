@@ -5,11 +5,8 @@ using System.Threading.Tasks;
 
 namespace app.Domain
 {
-    public class Subject : ISubject
+    public interface IAggregateRoot
     {
-        public int Get(int input)
-        {
-            return input;
-        }
+        String GetResponse(IDictionary<String, Object> values);
     }
 }

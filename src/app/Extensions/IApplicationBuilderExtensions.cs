@@ -12,6 +12,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using app.Handlers;
+using app.Domain;
 
 namespace app.Extensions
 {
@@ -37,13 +38,13 @@ namespace app.Extensions
             return builder;
         }
 
-        public static IApplicationBuilder UseCustomRoute(this IApplicationBuilder builder)
+        public static IApplicationBuilder UseCustomRoutes(this IApplicationBuilder builder, IAggregateRoot root)
         {
             var handlers = new RouteHandlerDelegates();
             
             var routeBuilder = new RouteBuilder(builder);
 
-            routeBuilder.MapRoute("route/{mode:regex(track|detonate)}/{id}",handlers.Track);
+            routeBuilder.MapRoute("route/{mode:regex(track|resolve|detonate)}/{id}",handlers.Track);
 
             routeBuilder.MapRoute("route/{mode:regex(create)}/{id}", handlers.Create);
 

@@ -8,7 +8,9 @@
   "dependencies": {
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Routing": "1.0.0",
+    "Microsoft.AspNetCore.Session": "1.0.0",
     "Microsoft.AspNetCore.StaticFiles": "1.0.0",
+    "Microsoft.Extensions.Caching.Memory": "1.0.0",
     "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0",
     "Microsoft.Extensions.Configuration.Json": "1.0.0",
     "Microsoft.Extensions.Localization.Abstractions": "1.0.0",
