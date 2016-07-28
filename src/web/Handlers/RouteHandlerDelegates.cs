@@ -1,5 +1,5 @@
-﻿using app.Configuration;
-using app.Domain;
+﻿using web.Configuration;
+using web.Domain;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Options;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace app.Handlers
+namespace web.Handlers
 {
     public class RouteHandlerDelegates
     {

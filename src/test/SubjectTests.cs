@@ -4,14 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace app.test
+namespace test._web.Domain
 {
     public class SubjectTests
     {
         [Fact]
         public void ThingGetsObjectValFromNumber()
         {
-            Assert.Equal(42, new app.Domain.Subject().Get(42));
+            Assert.Equal(42, new web.Domain.Subject().Get(42));
         }
     }
 }

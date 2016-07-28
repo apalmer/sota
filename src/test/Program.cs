@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace app.test
+namespace sota.test
 {
     public class Program
     {

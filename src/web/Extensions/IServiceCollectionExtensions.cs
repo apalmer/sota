@@ -1,13 +1,13 @@
-﻿using app.Configuration;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using web.Configuration;
 
-namespace app.Extensions
+namespace web.Extensions
 {
     public static class IServiceCollectionExtensions
     {

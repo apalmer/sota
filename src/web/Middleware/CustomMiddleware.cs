@@ -6,10 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Localization;
-using app.Configuration;
+using web.Configuration;
 using Microsoft.Extensions.Options;
 
-namespace app.Middleware
+namespace web.Middleware
 {
     public class CustomMiddleware
     {

@@ -1,4 +1,4 @@
-﻿using app.Middleware;
+﻿using web.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.FileProviders;
@@ -11,10 +11,10 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
-using app.Handlers;
-using app.Domain;
+using web.Handlers;
+using web.Domain;
 
-namespace app.Extensions
+namespace web.Extensions
 {
     public static class IApplicationBuilderExtensions
     {

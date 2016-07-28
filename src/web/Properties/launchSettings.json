@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "app": {
+    "web": {
       "commandName": "Project",
       "environmentVariables": {
         "Key": "Value",

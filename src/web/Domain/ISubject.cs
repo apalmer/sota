@@ -1,4 +1,4 @@
-﻿namespace app.Domain
+﻿namespace web.Domain
 {
     public interface ISubject
     {

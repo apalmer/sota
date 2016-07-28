@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace app.Configuration
+namespace web.Configuration
 {
     public class CustomOptions
     {

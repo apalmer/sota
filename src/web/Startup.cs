@@ -3,16 +3,16 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Routing;
-using app.Extensions;
+using web.Extensions;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
-using app.Configuration;
+using web.Configuration;
 using Microsoft.Extensions.Configuration;
-using app.Domain;
+using web.Domain;
 
-namespace app
+namespace web
 {
     public class Startup
     {
@@ -36,27 +36,27 @@ namespace app
             
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder web, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
 
-            app.UseSession();
+            web.UseSession();
 
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                web.UseDeveloperExceptionPage();
             }
              
-            app.UseCustomStaticFiles();
+            web.UseCustomStaticFiles();
 
-            app.UseCustomLogger(loggerFactory);
+            web.UseCustomLogger(loggerFactory);
 
-            app.UseSession();
+            web.UseSession();
 
-            app.UseCustomRoutes(app.ApplicationServices.GetService<IAggregateRoot>());
+            web.UseCustomRoutes(web.ApplicationServices.GetService<IAggregateRoot>());
 
-            app.UseCustomMiddleware();
+            web.UseCustomMiddleware();
 
-            app.Run(async (context) => 
+            web.Run(async (context) => 
             {
                 await context.Response.WriteAsync("\nResponse completed completed");
             });
